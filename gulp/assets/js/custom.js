@@ -14,17 +14,32 @@
 
 			s.$radio.on('change', function() {
 				var $parent = $(this).parents('.quiz'),
-					index = s.$quizes.index($parent);
+					index = s.$quizes.index($parent),
+					$this = $(this);
 
-				$('.progress-bar').attr('data-step', index + 2);
+				if($(this).parent('.choice').data('ok')) {
+					$.ajax({
+						method: 'post',
+						url: '/advance',
+						success: function () {
+							console.log(arguments);
 
-				if($(this).parents('.quiz').hasClass('last')) {
-					setTimeout(function() {
-						window.location.href = 'finish.html';
-					}, 1000);
-					window.location.href = 'finish.html';
-				} else {
-					s.$quizes.filter(':visible').hide().next().show();
+							$('.progress-bar').attr('data-step', index + 2);
+
+							if ($this.parents('.quiz').hasClass('last')) {
+								setTimeout(function () {
+									window.location.href = '/finish.html';
+								}, 1000);
+							} else {
+								s.$quizes.filter(':visible').hide().next().show();
+							}
+						},
+						fail: function () {
+							console.error('Ajax failed', arguments);
+						}
+					});
+
+
 				}
 			});
 		}

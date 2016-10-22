@@ -28,7 +28,7 @@
     display: none;
   }
 
-  input[type="radio"]:checked + label {
+  input[type="radio"]:checked + label, label:hover {
     .letter {
       background: $color-theme;
       color: $color-light;
