@@ -1,0 +1,20 @@
+.cars {
+  @include pie-clearfix();
+  margin: 0 auto;
+  max-width: 1024px;
+
+  .car {
+    box-sizing: border-box;
+    float: left;
+    padding-top: 250px;
+    width: 48%;
+
+    &.car-black {
+      background: $color-light url(../images/black.png) no-repeat center top;
+    }
+    &.car-white {
+      background: $color-light url(../images/white.png) no-repeat center top;
+      float: right;
+    }
+  }
+}

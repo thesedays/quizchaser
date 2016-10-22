@@ -1,0 +1,44 @@
+.progress {
+  position: absolute;
+  right: 0;
+  top: 250px;
+
+  .finish {
+    background: url(../images/finish.png) no-repeat center center;
+    height: 13px;
+    margin: 0 auto;
+    width: 84px;
+  }
+  .progress-bar {
+    background: #ccc;
+    height: 275px;
+    margin: 10px auto;
+    position: relative;
+    width: 3px;
+
+    &:after {
+      background: $color-theme;
+      border-radius: 100%;
+      content: '';
+      height: 30px;
+      left: 50%;
+      position: absolute;
+      top: 0;
+      transform: translate(-50%, -50%);
+      transition: top 250ms, bottom 250ms;
+      width: 30px;
+    }
+
+    &[data-step="1"]:after { top: 100%; }
+    &[data-step="2"]:after { top: 75%; }
+    &[data-step="3"]:after { top: 50%; }
+    &[data-step="4"]:after { top: 25%; }
+    &[data-step="5"]:after { top: 0%; }
+  }
+  .start {
+    background: url(../images/flag.png) no-repeat center center;
+    height: 65px;
+    margin: 0 auto;
+    width: 100px;
+  }
+}

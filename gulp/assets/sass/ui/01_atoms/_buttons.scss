@@ -1,0 +1,21 @@
+.button {
+  background: $color-light;
+  border: 5px solid $color-theme;
+  border-radius: 18px;
+  color: $color-main;
+  display: inline-block;
+  font: bold italic 40px/normal 'Eurostile';
+  padding: 20px;
+  text-decoration: none;
+  transition: color 250ms, background 250ms;
+
+  &.button-flag {
+    background: $color-light url("../images/flag.png") no-repeat 20px center;
+    padding-left: 140px;
+  }
+
+  &:hover {
+    background-color: $color-theme;
+    color: $color-light;
+  }
+}

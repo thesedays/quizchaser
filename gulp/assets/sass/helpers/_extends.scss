@@ -1,0 +1,30 @@
+@mixin text-indent() { text-indent: 100%; white-space: nowrap; overflow: hidden; }
+
+@mixin reset-list() { list-style: none; margin: 0; padding: 0; }
+
+@mixin text-fix() { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+@mixin text-ellipsis(){ overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+@mixin spriter($sprite, $map: $sprite-map, $repeat: no-repeat, $height: true, $width: true) {
+    $sprite-image: sprite-file($map, $sprite);
+    $sprite-map: sprite-url($map);
+    $sprite-position: sprite-position($map, $sprite);
+    display: inline-block;
+    overflow: hidden;
+    text-align: left;
+    background: $sprite-map $sprite-position $repeat;
+    text-indent: -9999px;
+    @if $height == true {
+        $sprite-height: image-height($sprite-image);
+        height: $sprite-height;
+    }
+    @if $width == true {
+        $sprite-width: image-width($sprite-image);
+        width: $sprite-width;
+    }
+}
+
+@function spritewidth($name) { @return image-width("#{$spritepath}/#{$name}.png"); }
+
+@function spriteheight($name) { @return image-height("#{$spritepath}/#{$name}.png"); }

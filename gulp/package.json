@@ -1,0 +1,26 @@
+{
+	"name": "start-project",
+	"description": "A structural setup for all projects",
+	"version": "1.0.0",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"devDependencies": {
+		"gulp": "^3.9",
+		"gulp-compass": "^2.1.0",
+		"gulp-concat": "^2.5.2",
+		"gulp-consolidate": "^0.2.0",
+		"gulp-iconfont": "^8.0.1",
+		"gulp-imagemin": "^3.0.3",
+		"gulp-sass-globbing": "^0.0.2",
+		"gulp-uglify": "^2.0.0",
+		"run-sequence": "^1.2.2",
+		"gulp-plumber": "^1.0.1",
+		"gulp-notify": "^2.2.0",
+		"lodash": "*"
+	},
+	"dependencies": {
+	}
+}

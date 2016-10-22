@@ -1,0 +1,16 @@
+.intro {
+  background: url(../images/track.png) no-repeat left center/contain;
+  padding: 200px 10px;
+  position: relative;
+  text-align: right;
+
+  &:after {
+    background: url(../images/hotracing.png) no-repeat left bottom;
+    content: '';
+    height: 117px;
+    left: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 300px;
+  }
+}
