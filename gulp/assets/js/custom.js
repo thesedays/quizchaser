@@ -5,16 +5,26 @@
 			var q = quiz,
 				s = q.settings;
 
-			s.$choices = $('.choices');
-			s.$radio = s.$choices.find(':radio');
+			s.$quizes = $('.quiz');
+			s.$radio = s.$quizes.find(':radio');
 
-			s.$choices.not(':first').hide();
+			s.$quizes.not(':first').hide();
 
-			s.$radio.find(':radio').on('input', function() {
-				if($(this).parents('.choices').hasClass('last')) {
+			$('.progress-bar').attr('data-step', 0);
+
+			s.$radio.on('change', function() {
+				var $parent = $(this).parents('.quiz'),
+					index = s.$quizes.index($parent);
+
+				$('.progress-bar').attr('data-step', index + 2);
+
+				if($(this).parents('.quiz').hasClass('last')) {
+					setTimeout(function() {
+						window.location.href = 'finish.html';
+					}, 1000);
 					window.location.href = 'finish.html';
 				} else {
-					s.$choices.filter(':visible').hide().next().show();
+					s.$quizes.filter(':visible').hide().next().show();
 				}
 			});
 		}

@@ -23,16 +23,16 @@
       height: 30px;
       left: 50%;
       position: absolute;
-      top: 0;
+      top: 100%;
       transform: translate(-50%, -50%);
       transition: top 250ms, bottom 250ms;
       width: 30px;
     }
 
-    &[data-step="1"]:after { top: 100%; }
-    &[data-step="2"]:after { top: 75%; }
-    &[data-step="3"]:after { top: 50%; }
-    &[data-step="4"]:after { top: 25%; }
+    &[data-step="1"]:after { top: 80%; }
+    &[data-step="2"]:after { top: 60%; }
+    &[data-step="3"]:after { top: 40%; }
+    &[data-step="4"]:after { top: 20%; }
     &[data-step="5"]:after { top: 0%; }
   }
   .start {
